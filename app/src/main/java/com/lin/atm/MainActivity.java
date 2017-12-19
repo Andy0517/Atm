@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
                      String phone = data.getStringExtra("USER_PHONE");
                     Toast.makeText(this,"Name:"+name,Toast.LENGTH_LONG).show();
                     Toast.makeText(this,"Phone:"+phone,Toast.LENGTH_LONG).show();
+                    getSharedPreferences("atm", MODE_PRIVATE)
+                            .edit()
+                            .putString("NAME", name)
+                            .putString("PHONE", phone)
+                            .apply();
                 }
                 else{
                         finish();

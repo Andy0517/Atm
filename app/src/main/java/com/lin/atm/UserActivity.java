@@ -18,14 +18,15 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-       /* ArrayList<String> data = new ArrayList<>();
-        for(int i=1;i<=40;i++){
+       ArrayList<String> data = new ArrayList<>();
+        for(int i=16;i<=40;i++){
             data.add(i+"");
-        }*/
+        }
         edname = (EditText) findViewById(R.id.ed＿name);
         edphone = (EditText) findViewById(R.id.ed_phone);
-       /* agechoose = (Spinner) findViewById(R.id.sp_age);
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,data);*/
+       agechoose = (Spinner) findViewById(R.id.sp_age);
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,data);
+        agechoose.setAdapter(adapter);
         edname.setText(getSharedPreferences("atm", MODE_PRIVATE)
                 .getString("Name", ""));
         edphone.setText(getSharedPreferences("atm", MODE_PRIVATE)
@@ -37,11 +38,6 @@ public class UserActivity extends AppCompatActivity {
         getIntent().putExtra("USER_NAME", name);
         getIntent().putExtra("USER_PHONE", phone);
         setResult(RESULT_OK, getIntent());
-        getSharedPreferences("atm", MODE_PRIVATE)
-                .edit()
-                .putString("NAME", name)
-                .putString("PHONE", phone)
-                .apply();
         finish();
 
 
