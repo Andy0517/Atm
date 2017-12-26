@@ -2,16 +2,13 @@ package com.lin.atm;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.StringDef;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this,"Phone:"+phone,Toast.LENGTH_LONG).show();
                     getSharedPreferences("atm", MODE_PRIVATE)
                             .edit()
-                            .putString("NAME", name)
-                            .putString("PHONE", phone)
+                            .putString("Name", name)
+                            .putString("Phone", phone)
                             .apply();
                 }
                 else{
@@ -73,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent userinfolayout = new Intent(MainActivity.this, UserActivity.class);
+               Intent userinfolayout = new Intent(MainActivity.this, UserInfoActivity.class);
                 startActivityForResult(userinfolayout,USER_INFO);   
             }
         });

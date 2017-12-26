@@ -10,7 +10,7 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
-public class UserActivity extends AppCompatActivity {
+public class UserInfoActivity extends AppCompatActivity {
     EditText edname;
     EditText edphone;
     Spinner agechoose;
@@ -41,5 +41,9 @@ public class UserActivity extends AppCompatActivity {
         finish();
 
 
+    }
+    public void address(View view){
+        Intent addresslayout = new Intent(this,AddrActivity.class);
+        startActivity(addresslayout);
     }
 }
