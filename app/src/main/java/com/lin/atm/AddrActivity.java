@@ -25,13 +25,13 @@ public class AddrActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 String[] data = null;
                 if(position == 0){
-                    data = new String[]{"暖暖區"};
+                    data = new String[]{"暖暖區","八堵區","中正區"};
                 }
                 if(position == 1){
-                    data = new String[]{"中和區","新莊區 "};
+                    data = new String[]{"永和區","新莊區","板橋區"};
                 }
                 if(position == 2){
-                    data = new String[]{"大安區"};
+                    data = new String[]{"大安區","士林區","信義區"};
 
                 }
                 ArrayAdapter adapter = new ArrayAdapter(AddrActivity.this,android.R.layout.simple_list_item_1,data);

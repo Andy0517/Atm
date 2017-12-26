@@ -43,7 +43,7 @@ public class UserInfoActivity extends AppCompatActivity {
 
     }
     public void address(View view){
-        Intent addresslayout = new Intent(this,AddrActivity.class);
+        Intent addresslayout = new Intent(this,CityActivity.class);
         startActivity(addresslayout);
     }
 }
