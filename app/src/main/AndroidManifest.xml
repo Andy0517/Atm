@@ -24,7 +24,7 @@
         <activity android:name=".CH8Activity" />
         <activity android:name=".AddrActivity" />
         <activity android:name=".CityActivity" />
-        <activity android:name=".ＡreaActivity"></activity>
+        <activity android:name=".AreaActivity"></activity>
     </application>
 
 </manifest>
