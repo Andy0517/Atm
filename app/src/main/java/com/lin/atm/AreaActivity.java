@@ -12,28 +12,28 @@ import static com.lin.atm.CityActivity.GO_KEELUNG;
 
 public class AreaActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView area;
-    String[] data = null;
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        this.data = 
-        switch(requestCode){
+        switch (requestCode) {
             case GO_KEELUNG:
-                data = new String[]{"暖暖區","八堵區","中正區"};
-                ArrayAdapter adapter =new ArrayAdapter(this,android.R.layout.simple_list_item_1,AreaActivity.data);
+                String[] rang = {"暖暖區", "八堵區", "中正區"};
+                ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, rang);
                 area.setAdapter(adapter);
                 area.setOnItemClickListener(this);
+                break;
         }
-        if(position == 1){
+      /*  if(position == 1){
             data = new String[]{"永和區","新莊區","板橋區"};
         }
         if(position == 2){
             data = new String[]{"大安區","士林區","信義區"};
 
-        }
-        ArrayAdapter adapter = new ArrayAdapter(AddrActivity.this,android.R.layout.simple_list_item_1,data);
+        }*/
+        //  ArrayAdapter adapter = new ArrayAdapter(AddrActivity.this,android.R.layout.simple_list_item_1,data);
     }
 
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
