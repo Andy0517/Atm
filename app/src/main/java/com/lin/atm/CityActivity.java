@@ -11,7 +11,7 @@ import android.widget.Spinner;
 
 public class CityActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView city;
-    public static final int  GO_KEELUNG = 0;
+    int purpose;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,20 +25,16 @@ public class CityActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-        String[] data = null;
-        if(position == 0){
             Intent arealayout = new Intent(this,AreaActivity.class);
-            startActivityForResult(arealayout,GO_KEELUNG);
-            data = new String[]{"暖暖區","八堵區","中正區"};
-        }
-        if(position == 1){
-            data = new String[]{"永和區","新莊區","板橋區"};
-        }
-        if(position == 2){
-            data = new String[]{"大安區","士林區","信義區"};
+            getIntent().putExtra("GO_AREA", position);
+            startActivity(arealayout);
+           // data = new String[]{"暖暖區","八堵區","中正區"};
 
-        }
-        ArrayAdapter adapter = new ArrayAdapter(CityActivity.this,android.R.layout.simple_list_item_1,data);
+            //data = new String[]{"永和區","新莊區","板橋區"};
+
+           // data = new String[]{"大安區","士林區","信義區"};
+
+       // ArrayAdapter adapter = new ArrayAdapter(CityActivity.this,android.R.layout.simple_list_item_1,data);
 
     }
 }
