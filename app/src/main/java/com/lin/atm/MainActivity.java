@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(userinfolayout,USER_INFO);   
             }
         });
+
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

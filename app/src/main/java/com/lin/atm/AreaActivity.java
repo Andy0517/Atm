@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class AreaActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView area;
-
+    String[] data = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +18,6 @@ public class AreaActivity extends AppCompatActivity implements AdapterView.OnIte
 
         area = (ListView) findViewById(R.id.area);
         int city = getIntent().getIntExtra("GO_AREA",0);
-        String[] data = null;
 
         switch(city){
             case 0:
@@ -38,6 +37,9 @@ public class AreaActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        getIntent().putExtra("BACK_CITY", data[position]);
+        setResult(RESULT_OK,getIntent());
+        finish();
         }
     }
 
